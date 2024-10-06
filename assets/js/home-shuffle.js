@@ -2,10 +2,10 @@
 var Shuffle = window.Shuffle;
 class Demo {
     constructor() {
-        this.element = document.getElementById('my-shuffle');
+        this.element = document.querySelector('.my-shuffle')
         // this.gridItems = this.element.querySelectorAll('.image-item');
-        // var myShuffle = new Shuffle(document.querySelector('.my-shuffle'), {
         var myShuffle = new Shuffle(this.element, {
+        // var myShuffle = new Shuffle(this.element, {
             itemSelector: '.image-item',
             // sizer: '.my-sizer-element',
             columnWidth: (containerWidth) => containerWidth,
