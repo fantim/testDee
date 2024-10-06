@@ -19,14 +19,14 @@ class Demo {
             }
         });
 
-        // this.observer = new IntersectionObserver(callback, {
-        //     threshold: 0.5,
-        // });
-        //
-        // // Loop through each grid item and add it to the viewport watcher.
-        // for (let i = 0; i < this.gridItems.length; i++) {
-        //     this.observer.observe(this.gridItems[i]);
-        // }
+        this.observer = new IntersectionObserver(callback, {
+            threshold: 0.5,
+        });
+
+        // Loop through each grid item and add it to the viewport watcher.
+        for (let i = 0; i < this.gridItems.length; i++) {
+            this.observer.observe(this.gridItems[i]);
+        }
     }
 }
 
