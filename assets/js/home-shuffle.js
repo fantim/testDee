@@ -3,7 +3,7 @@ var Shuffle = window.Shuffle;
 class Demo {
     constructor() {
         this.element = document.getElementById('my-shuffle');
-        this.gridItems = this.element.querySelectorAll('.picture-item');
+        this.gridItems = this.element.querySelectorAll('.image-item');
         var myShuffle = new Shuffle(document.querySelector('.my-shuffle'), {
             itemSelector: '.image-item',
             // sizer: '.my-sizer-element',
