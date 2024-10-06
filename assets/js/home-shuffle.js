@@ -22,15 +22,14 @@ var Shuffle = window.Shuffle;
 class Demo {
     constructor() {
         this.element = document.getElementById('grid');
-        // this.gridItems = this.element.querySelectorAll('.js-item');
-        // const sizer = this.element.querySelector('.js-sizer-element');
+        this.gridItems = this.element.querySelectorAll('.js-item');
+        const sizer = this.element.querySelector('.js-sizer-element');
 
-        this.shuffle = new Shuffle(document.querySelector('.my-shuffle'), {
-            itemSelector: '.image-item',
-            // sizer: '.my-sizer-element',
-            columnWidth: (containerWidth) => containerWidth,
-            buffer: 1,
+        this.shuffle = new Shuffle(this.element, {
+            itemSelector: '.picture-item',
+            sizer: sizer,
         });
+
 
         const callback = this.showItemsInViewport.bind(this);
         this.observer = new IntersectionObserver(callback, {
