@@ -12,12 +12,12 @@ class Demo {
             buffer: 1,
         });
 
-        window.jQuery('input[name="shuffle-filter"]').on('change', function (evt) {
-            var input = evt.currentTarget;
-            if (input.checked) {
-                myShuffle.filter(input.value);
-            }
-        });
+        // window.jQuery('input[name="shuffle-filter"]').on('change', function (evt) {
+        //     var input = evt.currentTarget;
+        //     if (input.checked) {
+        //         myShuffle.filter(input.value);
+        //     }
+        // });
 
         const callback = this.showItemsInViewport.bind(this);
         this.observer = new IntersectionObserver(callback, {
