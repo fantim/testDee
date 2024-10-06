@@ -54,7 +54,7 @@ Demo.prototype.addTransitionToItems = function () {
 window.jQuery('input[name="shuffle-filter"]').on('change', function (evt) {
         var input = evt.currentTarget;
         if (input.checked) {
-            Demo.filter(input.value);
+            Demo.prototype.filter(input.value);
         }
 });
 
