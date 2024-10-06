@@ -1,5 +1,5 @@
-var Emitter = require('tiny-emitter');
-var emitter = require('tiny-emitter/instance');
+var Emitter = require('assets/js/tiny-emitter/index');
+var emitter = require('assets/js/tiny-emitter/instance');
 var test = require('tape');
 
 test('subscribes to an event', function (t) {
