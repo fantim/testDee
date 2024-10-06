@@ -7,7 +7,7 @@ class Demo {
         var myShuffle = new Shuffle(this.element, {
         // var myShuffle = new Shuffle(this.element, {
             itemSelector: '.image-item',
-            // sizer: '.my-sizer-element',
+            sizer: '.js-sizer-element',
             columnWidth: (containerWidth) => containerWidth,
             buffer: 1,
         });
