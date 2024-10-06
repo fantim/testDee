@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var myShuffle = new Shuffle(document.querySelector('.my-shuffle'), {
         itemSelector: '.image-item',
-        sizer: '.my-sizer-element',
+        // sizer: '.my-sizer-element',
+        columnWidth: (containerWidth) => containerWidth,
         buffer: 1,
     });
 
