@@ -26,10 +26,10 @@ class Demo {
         const sizer = this.element.querySelector('.js-sizer-element');
 
         this.shuffle = new Shuffle(this.element, {
-            itemSelector: '.picture-item',
+            itemSelector: '.js-item',
             sizer: sizer,
+            buffer: 1,
         });
-
 
         const callback = this.showItemsInViewport.bind(this);
         this.observer = new IntersectionObserver(callback, {
@@ -46,13 +46,6 @@ class Demo {
         setTimeout(() => {
             this.addTransitionToItems();
         }, 100);
-
-        window.jQuery('input[name="shuffle-filter"]').on('change', function (evt) {
-            var input = evt.currentTarget;
-            if (input.checked) {
-                myShuffle.filter(input.value);
-            }
-        });
     }
 
     /**
@@ -77,6 +70,5 @@ class Demo {
         }
     }
 }
-document.addEventListener('DOMContentLoaded', function () {
-    window.demo = new Demo(document.getElementById('my-shuffle'));
-});
+
+window.demo = new Demo(document.getElementById('my-shuffle'));
