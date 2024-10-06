@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     var Shuffle = window.Shuffle;
 
+    this.gridItems = this.element.querySelectorAll('.image-item');
+
     var myShuffle = new Shuffle(document.querySelector('.my-shuffle'), {
         itemSelector: '.image-item',
         // sizer: '.my-sizer-element',
@@ -14,6 +16,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
             myShuffle.filter(input.value);
         }
     });
+
+    // Try Infinite Scroll
+    const callback = this.showItemsInViewport.bind(this);
+    this.observer = new IntersectionObserver(callback, {
+        threshold: 0.5,
+    });
+
+    // Loop through each grid item and add it to the viewport watcher.
+    for (let i = 0; i < this.gridItems.length; i++) {
+        this.observer.observe(this.gridItems[i]);
+    }
+
+    // Add the transition class to the items after ones that are in the viewport
+    // have received the `in` class.
+    setTimeout(() => {
+        this.addTransitionToItems();
+    }, 100);
+
 });
 
 
@@ -68,7 +88,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
 //         }
 //     }
 // }
-//
-// document.addEventListener('DOMContentLoaded', function () {
-//     window.demo = new Demo(document.getElementById('my-shuffle'));
-// });
