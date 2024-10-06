@@ -3,8 +3,9 @@ var Shuffle = window.Shuffle;
 class Demo {
     constructor() {
         this.element = document.getElementById('my-shuffle');
-        this.gridItems = this.element.querySelectorAll('.image-item');
-        var myShuffle = new Shuffle(document.querySelector('.my-shuffle'), {
+        // this.gridItems = this.element.querySelectorAll('.image-item');
+        // var myShuffle = new Shuffle(document.querySelector('.my-shuffle'), {
+        var myShuffle = new Shuffle(this.element, {
             itemSelector: '.image-item',
             // sizer: '.my-sizer-element',
             columnWidth: (containerWidth) => containerWidth,
@@ -18,14 +19,14 @@ class Demo {
             }
         });
 
-        this.observer = new IntersectionObserver(callback, {
-            threshold: 0.5,
-        });
-
-        // Loop through each grid item and add it to the viewport watcher.
-        for (let i = 0; i < this.gridItems.length; i++) {
-            this.observer.observe(this.gridItems[i]);
-        }
+        // this.observer = new IntersectionObserver(callback, {
+        //     threshold: 0.5,
+        // });
+        //
+        // // Loop through each grid item and add it to the viewport watcher.
+        // for (let i = 0; i < this.gridItems.length; i++) {
+        //     this.observer.observe(this.gridItems[i]);
+        // }
     }
 }
 
