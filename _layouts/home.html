@@ -3,13 +3,190 @@ layout: default
 title: Home
 ---
 
-{% for post in paginator.posts %}
-  {% include featured-post.html %}
-{% endfor %}
-
 <!-- Testing Stuff -->
 <button type="button" class="btn btn-primary">Primary</button>
 
+<script src="/assets/js/home-shuffle.js"></script>
+
+<div class="container">
+
+  <div class="row text-center">
+    <div class="col-md-12 text-center pb20">
+      <h2>Take a Look at
+        <br>
+        <strong>Some of Our Work</strong>
+      </h2>
+      <p class="lead">Wide range of
+        <span class="color">successful</span> digital and print projects.</p>
+    </div>
+
+
+    <div class="col-md-12">
+      <div class="col">
+        <div class="btn-group vossen-portfolio-filters" data-toggle="buttons">
+          <label class="btn btn-primary active">
+            <input type="radio" name="shuffle-filter" value="all" checked="checked" />All</label>
+          <label class="btn btn-primary">
+            <input type="radio" name="shuffle-filter" value="nature" />Nature</label>
+          <label class="btn btn-primary">
+            <input type="radio" name="shuffle-filter" value="fruit" />Fruit</label>
+          <label class="btn btn-primary">
+            <input type="radio" name="shuffle-filter" value="architecture" />Architecture</label>
+        </div>
+      </div>
+    </div>
+    <div class="my-shuffle">
+
+      <!-- Portfolio Item -->
+      <div class="col-lg-4 col-md-4 col-sm-6 image-item" data-groups="[&quot;nature&quot;]">
+
+        <div class="portfolio-item">
+          <div class="item-caption">
+            <h4>Wunderkind</h4>
+            <p>Branding</p>
+          </div>
+          <div class="item-image">
+            <img alt="#" src="https://images.unsplash.com/uploads/141310026617203b5980d/c86b8baa?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;fit=crop&amp;s=882e851a008e83b7a80d05bdc96aa817"
+                 obj.alt="obj.alt" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Portfolio Item -->
+      <div class="col-lg-4 col-md-4 col-sm-6 image-item" data-groups="[&quot;nature&quot;]">
+
+        <div class="portfolio-item">
+          <div class="item-caption">
+            <h4>iWatch App</h4>
+            <p>Digital</p>
+          </div>
+          <div class="item-image">
+            <img alt="#" src="https://images.unsplash.com/photo-1484402628941-0bb40fc029e7?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;fit=crop&amp;s=6237e62a10fa079d99b088b0db0144ac"
+                 obj.alt="obj.alt" />
+          </div>
+        </div>
+
+      </div>
+      <!-- Portfolio Item -->
+      <div class="col-lg-4 col-md-4 col-sm-12 image-item" data-groups="[&quot;nature&quot;]">
+
+        <div class="portfolio-item">
+          <div class="item-caption">
+            <h4>Wunder Hero</h4>
+            <p>Branding</p>
+          </div>
+          <div class="item-image">
+            <img alt="#" src="https://images.unsplash.com/uploads/1413142095961484763cf/d141726c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;fit=crop&amp;s=86dc2dcb74588b338dfbb15d959c5037"
+                 obj.alt="obj.alt" />
+          </div>
+        </div>
+
+      </div>
+      <!-- Portfolio Item -->
+      <div class="col-md-8 col-sm-6 image-item" data-groups="[&quot;architecture&quot;]">
+
+        <div class="portfolio-item">
+          <div class="item-caption">
+            <h4>Thom Business Cards</h4>
+            <p>Branding &amp; Digital</p>
+          </div>
+          <div class="item-image">
+            <img alt="#" src="https://images.unsplash.com/photo-1465414829459-d228b58caf6e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;fit=crop&amp;s=7ab1744fe016fb39feb2972244246359"
+                 obj.alt="obj.alt" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Portfolio Item -->
+      <div class="col-lg-4 col-md-4 col-sm-6 image-item" data-groups="[&quot;nature&quot;,&quot;architecture&quot;]">
+
+        <div class="portfolio-item">
+          <div class="item-caption">
+            <h4>Label Mockup</h4>
+            <p>Print Category</p>
+          </div>
+          <div class="item-image">
+            <img alt="#" src="https://images.unsplash.com/photo-1416184008836-5486f3e2cf58?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=601&amp;h=676&amp;fit=crop&amp;s=5f1f1ffba05979d4248cc16d8eb82f0a"
+                 obj.alt="obj.alt" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Portfolio Item -->
+      <div class="col-lg-4 col-md-4 col-sm-6 image-item" data-groups="[&quot;nature&quot;]">
+
+        <div class="portfolio-item">
+          <div class="item-caption">
+            <h4>Letter Mockup</h4>
+            <p>Print Category</p>
+          </div>
+          <div class="item-image">
+            <img alt="#" src="https://images.unsplash.com/photo-1478033394151-c931d5a4bdd6?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;fit=crop&amp;s=57a00aabcfaa1b04fd268ea3ad4a4cbb"
+                 obj.alt="obj.alt" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Portfolio Item -->
+      <div class="col-lg-4 col-md-4 col-sm-6 image-item" data-groups="[&quot;nature&quot;]">
+
+        <div class="portfolio-item">
+          <div class="item-caption">
+            <h4>Boxed Cards</h4>
+            <p>Print Work</p>
+          </div>
+          <div class="item-image">
+            <img alt="#" src="https://images.unsplash.com/photo-1473175494278-d83ed8459089?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1208&amp;h=338&amp;fit=crop&amp;s=fd1cf1e8eddf88ef87015314f85ce3fb"
+                 obj.alt="obj.alt" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Portfolio Item -->
+      <div class="col-lg-4 col-md-4 col-sm-6 image-item" data-groups="[&quot;nature&quot;]">
+
+        <div class="portfolio-item">
+          <div class="item-caption">
+            <h4>Thanks Letter</h4>
+            <p>Branding</p>
+          </div>
+          <div class="item-image">
+            <img alt="product" src="https://images.unsplash.com/photo-1434144893279-2a9fc14e9337?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;fit=crop&amp;s=d2f930bbb91de7e19e6436f5b03897b0"
+                 obj.alt="obj.alt" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Portfolio Item -->
+      <div class="col-lg-4 col-md-4 col-sm-6 image-item" data-groups="[&quot;fruit&quot;]">
+
+        <div class="portfolio-item">
+          <div class="item-caption">
+            <h4>Flying Mac</h4>
+            <p>Branding</p>
+          </div>
+          <div class="item-image">
+            <img alt="product" src="https://images.unsplash.com/photo-1464454709131-ffd692591ee5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;fit=crop&amp;s=eda14f45e94e9024f854b1e06708c629"
+                 obj.alt="obj.alt" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-4 my-sizer-element"></div>
+    </div>
+  </div>
+
+
+{% for post in paginator.posts %}
+  {% include featured-post.html %}
+{% endfor %}
 
 <!-- Pagination links -->
 <div class="pagination">
