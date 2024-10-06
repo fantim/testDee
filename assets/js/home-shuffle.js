@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     var Shuffle = window.Shuffle;
 
-    this.gridItems = this.element.querySelectorAll('.image-item');
+    this.gridItems = this.element.querySelectorAll('.my-shuffle');
 
     var myShuffle = new Shuffle(document.querySelector('.my-shuffle'), {
         itemSelector: '.image-item',
