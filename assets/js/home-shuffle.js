@@ -69,4 +69,6 @@ class Demo {
     }
 }
 
-window.demo = new Demo(document.getElementById('my-shuffle'));
+document.addEventListener('DOMContentLoaded', function () {
+    window.demo = new Demo(document.getElementById('my-shuffle'));
+});
