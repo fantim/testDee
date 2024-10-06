@@ -17,8 +17,6 @@
 // });
 
 
-var Shuffle = window.Shuffle;
-
 class Demo {
     constructor() {
         this.element = document.getElementById('grid');

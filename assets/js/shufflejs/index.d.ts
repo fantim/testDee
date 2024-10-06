@@ -2,7 +2,7 @@
 // Project: https://github.com/Vestride/Shuffle
 // Definitions by: Glen Cheney <https://github.com/Vestride>
 
-import { TinyEmitter } from 'tiny-emitter';
+import { TinyEmitter } from '../tiny-emitter';
 
 export as namespace Shuffle;
 export default Shuffle;
