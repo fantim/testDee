@@ -2,6 +2,7 @@
 var Shuffle = window.Shuffle;
 class Demo {
     constructor() {
+        this.gridItems = this.element.querySelectorAll('.picture-item');
         var myShuffle = new Shuffle(document.querySelector('.my-shuffle'), {
             itemSelector: '.image-item',
             // sizer: '.my-sizer-element',
@@ -15,6 +16,15 @@ class Demo {
                 myShuffle.filter(input.value);
             }
         });
+
+        this.observer = new IntersectionObserver(callback, {
+            threshold: 0.5,
+        });
+
+        // Loop through each grid item and add it to the viewport watcher.
+        for (let i = 0; i < this.gridItems.length; i++) {
+            this.observer.observe(this.gridItems[i]);
+        }
     }
 }
 
