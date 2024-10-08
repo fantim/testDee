@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "4.6",
+    "infinite-scroll": "^4.0.1",
     "shufflejs": "^6.1.1"
   }
 }
