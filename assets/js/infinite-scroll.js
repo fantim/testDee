@@ -1,34 +1,95 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-document.addEventListener('DOMContentLoaded', function () {
-//-------------------------------------//
-// init Infinte Scroll
+let page = 1;
+const last_page = 10;
+const pixel_offset = 200;
+const throttle = (callBack, delay) => {
+    let withinInterval;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!withinInterval) {
+            callBack.call(context, args);
+            withinInterval = true;
+            setTimeout(() => (withinInterval = false), delay);
+        }
+    };
+};
 
-    let $container = $('.container').infiniteScroll({
-        path: getPenPath,
-        append: '.post',
-        status: '.page-load-status',
+const httpRequestWrapper = (method, URL) => {
+    return new Promise((resolve, reject) => {
+        const xhr_obj = new XMLHttpRequest();
+        xhr_obj.responseType = "json";
+        xhr_obj.open(method, URL);
+        xhr_obj.onload = () => {
+            const data = xhr_obj.response;
+            resolve(data);
+        };
+        xhr_obj.onerror = () => {
+            reject("failed");
+        };
+        xhr_obj.send();
     });
+};
 
-// get Infinite Scroll instance
-    let infScroll = $container.data('infiniteScroll');
+const getData = async (page_no = 1) => {
+    const data = await httpRequestWrapper(
+        "GET",
+        `https://randomuser.me/api/?page=${page_no}&results=10`
+    );
 
-    let $statusBar = $('.status-bar');
+    const {results} = data;
+    populateUI(results);
+};
 
-    $container.on('load.infiniteScroll', function () {
-        $statusBar.text(`Loaded page: ${infScroll.pageIndex}`);
-    });
+let handleLoad;
 
-//-------------------------------------//
-// hack CodePen to load pens as pages
+let trottleHandler = () =>{throttle(handleLoad.call(this), 1000)};
 
-    function getPenPath() {
-        const nextPenSlugs = [
-            '3d9a3b8092ebcf9bc4a72672b81df1ac',
-            '2cde50c59ea73c47aec5bd26343ce287',
-            'd83110c5f71ea23ba5800b6b1a4a95c4',
-        ];
-
-        let slug = nextPenSlugs[this.loadCount];
-        if (slug) return `/desandro/debug/${slug}`;
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    getData(1);
+    window.addEventListener("scroll", trottleHandler);
 });
+
+handleLoad =  () => {
+    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight - pixel_offset){
+        page = page+1;
+        if(page<=last_page){
+            window.removeEventListener('scroll',trottleHandler)
+            getData(page)
+                .then((res)=>{
+                    window.addEventListener('scroll',trottleHandler)
+                })
+        }
+    }
+}
+
+
+
+
+
+
+
+const populateUI = data => {
+    const container = document.querySelector('.whole_wrapper');
+    data &&
+    data.length &&
+    data
+        .map((each,index)=>{
+            const {name,email,picture} = each;
+            const {first} = name;
+            const {large} = picture;
+            container.innerHTML +=
+                `
+    <div class="each_card">
+      <div class="image_container">
+        <img src="${large}" alt="" />
+      </div>
+      <div class="right_contents_container">
+        <div class="name_field">${first}</div>
+        <div class="email_filed">${email}</div>
+      </div>
+    </div>
+    
+    `
+        })
+
+}
