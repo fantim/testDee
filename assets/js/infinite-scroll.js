@@ -1,3 +1,6 @@
+<script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 document.addEventListener('DOMContentLoaded', function () {
 //-------------------------------------//
 // init Infinte Scroll
