@@ -1,10 +1,98 @@
 ---
 layout: default
 ---
+<script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ site.github.url }}/assets/js/infinite-scroll.js"></script>
+<link rel="stylesheet" href="{{ site.github.url }}/assets/css/shuffle.css">
+
+
+<div class="container">
+  <article class="post">
+    <div class="row text-center">
+      <!-- Portfolio Item -->
+      <div class="image-item" data-groups="[&quot;nature&quot;]">
+        <div class="portfolio-item">
+          <div class="item-caption">
+            <h4>Wunderkind</h4>
+            <p>Branding</p>
+          </div>
+          <div class="item-image">
+            <img alt="#" class="align-content-center" src="https://images.unsplash.com/uploads/141310026617203b5980d/c86b8baa?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;fit=crop&amp;s=882e851a008e83b7a80d05bdc96aa817"
+                 obj.alt="obj.alt" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </article>
+  <article class="post">
+    <!-- Portfolio Item -->
+    <div class="image-item" data-groups="[&quot;nature&quot;]">
+
+      <div class="portfolio-item">
+        <div class="item-caption">
+          <h4>Boxed Cards</h4>
+          <p>Print Work</p>
+        </div>
+        <div class="item-image">
+          <img alt="#" src="https://images.unsplash.com/photo-1473175494278-d83ed8459089?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1208&amp;h=338&amp;fit=crop&amp;s=fd1cf1e8eddf88ef87015314f85ce3fb"
+               obj.alt="obj.alt" />
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="post">
+    <!-- Portfolio Item -->
+    <div class="image-item" data-groups="[&quot;nature&quot;]">
+
+      <div class="portfolio-item">
+        <div class="item-caption">
+          <h4>Thanks Letter</h4>
+          <p>Branding</p>
+        </div>
+        <div class="item-image">
+          <img alt="product" src="https://images.unsplash.com/photo-1434144893279-2a9fc14e9337?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;fit=crop&amp;s=d2f930bbb91de7e19e6436f5b03897b0"
+               obj.alt="obj.alt" />
+        </div>
+      </div>
+
+    </div>
+  </article>
+</div>
+
+<!-- status elements -->
+<div class="scroller-status">
+  <div class="infinite-scroll-request loader-ellips">
+    ...
+  </div>
+  <p class="infinite-scroll-last">End of content</p>
+  <p class="infinite-scroll-error">No more pages to load</p>
+</div>
+
+
+<div class="page-load-status">
+  <div class="loader-ellips infinite-scroll-request">
+    <span class="loader-ellips__dot"></span>
+    <span class="loader-ellips__dot"></span>
+    <span class="loader-ellips__dot"></span>
+    <span class="loader-ellips__dot"></span>
+  </div>
+  <p class="infinite-scroll-last">End of content</p>
+  <p class="infinite-scroll-error">No more pages to load</p>
+</div>
+
+<!-- pagination has path -->
+<p class="pagination">
+  <a class="pagination__next" href="page2.html">Next page</a>
+</p>
+
 
 <div class="post-content">
   <h1>
-    {{ page.title }}
+    {{ pag
+    e.title }}
   </h1>
   {% if site.hide_post_date != true %}
     {% include post-date.html %}
