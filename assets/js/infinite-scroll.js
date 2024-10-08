@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //-------------------------------------//
 // init Infinte Scroll
 
-    let $container = $('.container').InfiniteScroll({
+    let $container = $('.container').infiniteScroll({
         path: '.pagination__next',
         append: '.post',
         status: '.page-load-status',
