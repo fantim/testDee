@@ -35,7 +35,7 @@ const getData = async (page_no = 1) => {
         "GET",
         `https://randomuser.me/api/?page=${page_no}&results=10`
     );
-    
+
 
     const {results} = data;
     populateUI(results);
